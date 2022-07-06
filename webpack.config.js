@@ -9,7 +9,7 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 module.exports = env => {
     const plugins = [
         new MiniCssExtractPlugin({
-            filename: './css/[name].css'
+            filename: './css/[name].min.css'
         }),
         new SpriteLoaderPlugin({plainSprite: true}),
         new ESLintPlugin(),
@@ -31,9 +31,6 @@ module.exports = env => {
             app: [
                 './src/css/app.css',
                 './src/js/app.js',
-            ],
-            editor: [
-                './src/css/editor.css'
             ]
         },
         watchOptions: {

@@ -4,7 +4,8 @@ module.exports = {
     plugins: {
         'postcss-import': {},
         'postcss-inline-comment': {},
-        'postcss-nested': {},
+        'tailwindcss/nesting': {},
+        'postcss-nesting': {},
         tailwindcss: {},
         autoprefixer: {},
         'postcss-easy-import': {

@@ -4,6 +4,10 @@ node_modules/
 package-lock.json
 yarn.lock
 
+### Unused folders ###
+
+dist/
+
 ### OSX ###
 
 .DS_Store
