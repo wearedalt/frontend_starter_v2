@@ -5,6 +5,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 
 module.exports = env => {
     const plugins = [
@@ -26,11 +27,18 @@ module.exports = env => {
         )
     }
 
+    plugins.push(
+        new RemoveEmptyScriptsPlugin()
+    )
+
     return {
         entry: {
             app: [
                 './src/css/app.css',
                 './src/js/app.js',
+            ],
+            editor: [
+                './src/css/editor.css'
             ]
         },
         watchOptions: {
