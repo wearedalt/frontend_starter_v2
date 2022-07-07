@@ -21,8 +21,16 @@ module.exports = env => {
         plugins.push(
             new BrowserSyncPlugin({
                 proxy: 'http://localhost:10008/',
-                files: [path.resolve(__dirname, 'dist') + '/**/*.{js,css}'],
-                reloadDelay: 0
+                reloadDelay: 0,
+                files: [{
+                  match: [path.resolve(__dirname, 'dist') + '/**/*.{js,css}'],
+                  fn: function(event, file) {
+                    if (event === 'change') {
+                      const bs = require('browser-sync').get('bs-webpack-plugin');
+                      bs.reload();
+                    }
+                  },
+                }],
             })
         )
     }
@@ -42,6 +50,7 @@ module.exports = env => {
             ]
         },
         watchOptions: {
+            poll: true,
             ignored: path.resolve(__dirname, 'dist')
         },
         output: {
