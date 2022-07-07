@@ -1,5 +1,4 @@
 @layer base {
-
     html {
         font-size: 62.5%;
         @apply overflow-x-hidden;
@@ -15,7 +14,7 @@
 
     p {
         strong {
-            @apply text-blue-500;
+            @apply text-blue-700;
         }
     }
 }
