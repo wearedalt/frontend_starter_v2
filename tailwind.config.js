@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 
-const { generateSpacing } = require('./tailwind.config/functions');
-const { spacings } = require('./tailwind.config/values');
+const { generateSpacing } = require("./tailwind.config/functions");
+const { spacings } = require("./tailwind.config/values");
 
 module.exports = {
-  content: ['../**/*.php'],
+  // content: ['../**/*.php'],
   theme: {
     extend: {},
-    spacing: generateSpacing(spacings)
+    spacing: generateSpacing(spacings),
   },
   plugins: [],
-}
+};

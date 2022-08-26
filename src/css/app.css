@@ -1,5 +1,18 @@
-@import 'global/_typography';
 
+
+@import 'global/_typography';
 @tailwind base;
 @tailwind components;
+
+@layer base {
+    html {
+        font-size: 62.5%;
+        @apply overflow-x-hidden;
+    }
+
+    body {
+        @apply overflow-x-hidden;
+    }
+}
+
 @tailwind utilities;

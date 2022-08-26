@@ -6,9 +6,9 @@
   "author": "Antoine Delcourte",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --mode production",
-    "dev": "webpack --mode development --watch",
-    "serve": "webpack --mode development --watch --env sync"
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack --config webpack.dev.js",
+    "serve": "webpack --config webpack.dev.js --sync=true"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
@@ -32,10 +32,14 @@
   },
   "dependencies": {
     "mini-css-extract-plugin": "^2.6.1",
+    "postcss-easy-import": "^4.0.0",
     "postcss-import": "^14.1.0",
     "postcss-loader": "^7.0.0",
     "postcss-nesting": "^10.1.10",
+    "postcss-preset-env": "^7.8.0",
     "postcss-scss": "^4.0.4",
-    "stylelint-config-recommended-scss": "^6.0.0"
+    "stylelint-config-recommended-scss": "^6.0.0",
+    "webpack-merge": "^5.8.0",
+    "webpack-notifier": "^1.15.0"
   }
 }

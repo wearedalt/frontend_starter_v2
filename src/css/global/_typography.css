@@ -1,13 +1,4 @@
 @layer base {
-    html {
-        font-size: 62.5%;
-        @apply overflow-x-hidden;
-    }
-    
-    body {
-        @apply overflow-x-hidden;
-    }
-    
     h1 {
         @apply text-red-500 font-extrabold;
     }
