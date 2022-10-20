@@ -2,7 +2,8 @@
 
 const {
     generateSpacing,
-    generateFontSizes
+    generateFontSizes,
+    generateValues
 } = require('./tailwind.config/functions')
 
 const {
@@ -18,7 +19,7 @@ module.exports = {
         extend: {},
         spacing: generateSpacing(spacings),
         colors: colors,
-        fontWeight: fontWeights,
+        fontWeight: generateValues(fontWeights),
         fontSize: generateFontSizes(fontSizes)
     },
     plugins: []

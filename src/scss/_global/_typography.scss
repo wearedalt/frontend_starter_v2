@@ -1,0 +1,13 @@
+@layer base {
+    h1 {
+        @apply text-black font-700;
+    }
+
+    p {
+        @apply text-black;
+
+        strong {
+            @apply text-[#FFFF00];
+        }
+    }
+}

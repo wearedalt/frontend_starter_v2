@@ -6,8 +6,8 @@ const StylelintPlugin = require('stylelint-webpack-plugin')
 
 module.exports = {
     entry: {
-        app: ['./src/css/app.css', './src/js/app.js']
-        // editor: ["./src/css/editor.css"], USED ONLY IF CUSTOM WORDPRESS TEXT EDITOR CLASSES
+        app: ['./src/scss/app.scss', './src/js/app.js']
+        // editor: ["./src/scss/editor.scss"], USED ONLY IF CUSTOM WORDPRESS TEXT EDITOR CLASSES
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -19,8 +19,9 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.scss$/,
                 exclude: /node_modules/,
+                include: path.resolve(__dirname, 'src'),
                 sideEffects: true,
                 use: [
                     {
@@ -31,6 +32,14 @@ module.exports = {
                     },
                     {
                         loader: 'postcss-loader'
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sassOptions: {
+                                includePaths: ['./src/scss/**/*.scss']
+                            }
+                        }
                     }
                 ]
             },

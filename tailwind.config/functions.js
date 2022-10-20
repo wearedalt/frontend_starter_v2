@@ -15,5 +15,12 @@ module.exports = {
             acc[v] = `${(v * 0.1).toFixed(1)}rem`
             return acc
         }, {})
+    },
+
+    generateValues: function (values) {
+        return values.reduce((acc, v) => {
+            acc[`${v.toString().replace('.', '_')}`] = v
+            return acc
+        }, {})
     }
 }

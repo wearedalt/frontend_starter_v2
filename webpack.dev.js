@@ -4,11 +4,21 @@ const path = require('path')
 
 const WebpackNotifierPlugin = require('webpack-notifier')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+const OnlyIfChangedPlugin = require('only-if-changed-webpack-plugin')
+
+var opts = {
+    rootDir: process.cwd(),
+    devBuild: true
+}
 
 console.log('MODE : development')
 
 module.exports = (sync) => {
     const plugins = [
+        // new OnlyIfChangedPlugin({
+        //     cacheDirectory: path.join(opts.rootDir, 'tmp/cache'),
+        //     cacheIdentifier: opts
+        // }),
         new WebpackNotifierPlugin({
             alwaysNotify: true,
             title: 'Frontend Starter compile theme'

@@ -2,6 +2,28 @@
 
 <br/>
 
+## **Commandes utiles**
+
+```bash
+yarn dev
+```
+Exécute la commande de développement avec watcher
+
+```bash
+yarn serve
+```
+Exécute la commande de développement avec watcher et browser sync
+
+```bash
+yarn build
+```
+Exécute la commande de build
+
+```bash
+yarn tailwind-config-viewer
+```
+Lance en temps réel la documentation tailwind du projet en cours
+
 ## **Architecture**
 
 ```bash
